@@ -1,0 +1,10 @@
+<% layout('boilerplate/boilerplate.ejs') %>
+
+<form action="/index" method="POST">
+    <input type="text" name="nume" placeholder="Nume">
+    <input type="text" name="prenume" placeholder="Prenume">
+    <input type="text" name="age" placeholder="Varsta">
+    <button>Add</button>
+</form>
+
+<%= JSON.stringify(itemsList) %>
