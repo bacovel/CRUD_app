@@ -12,6 +12,7 @@ app.set('view engine', 'ejs'); // so you can render('index')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("views", __dirname + "/views");
+app.use(express.static("public"));
 app.use(methodOverride('_method'))
 
 

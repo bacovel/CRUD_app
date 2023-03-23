@@ -1,10 +1,21 @@
 <% layout('boilerplate/boilerplate.ejs') %>
 
-<form action="/index" method="POST">
-    <input type="text" name="nume" placeholder="Nume">
-    <input type="text" name="prenume" placeholder="Prenume">
-    <input type="text" name="age" placeholder="Varsta">
-    <button>Add</button>
-</form>
+<div class="header">
+    <nav class="navbar navbar-expand-lg bg-light bg-body-tertiary">
+        <div class="container-md">
+          <a class="navbar-brand" href="#">Navbar</a>
+        </div>
+    </nav>
+    <h1>Friends management software =)</h1>
+</div>
+<div class="content">
+    <form action="/index" method="POST">
+        <input type="text" name="nume" minlength="3" class="form-control" placeholder="Nume" required>
+        <input type="text" name="prenume" minlength="3" class="form-control" placeholder="Prenume" required>
+        <input type="number" min="10" max="60" name="age" class="form-control" placeholder="Varsta" required>
+        <button class="btn btn-outline-secondary">Add another friend!</button>
+    </form>
+</div>
+
 
 <%= JSON.stringify(itemsList) %>
