@@ -32,9 +32,14 @@ const itemSchema = new Schema({
 
 const Item = mongoose.model("Item", itemSchema);
 
+const getFriend = async (req, res) => {
+    const friendFounded = await Item.findById(req.params.id);
+    res.render("pages/friend.ejs",{title:"Edit Friend", friendFounded});
+}
+
 app.get('/', async (req, res) => {
     const items = await Item.find({});
-    res.render("pages/index",{title:"index", itemsList: items});
+    res.render("pages/index",{title:"Friends Management Software", itemsList: items});
 });
 
 app.post('/index', async (req, res) => {
@@ -47,6 +52,14 @@ app.delete('/index/:id', async (req, res) => {
     await Item.findByIdAndDelete(req.params.id);
     res.redirect("/");
 })
+
+app.put('/index/:id', async (req, res) => {
+    await Item.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect("/");
+});
+
+app.get('/friend/:id', getFriend);
+
 
 
 

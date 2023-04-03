@@ -1,0 +1,14 @@
+<% layout('boilerplate/boilerplate.ejs') %>
+
+
+<div class="content">
+    <h2>The mf you want to edit!</h2>
+
+    <form action="/index/<%= friendFounded.id %>?_method=PUT" method="POST">
+        <input class="form-control" type="text" name="nume" id="" value="<%= friendFounded.nume %>" required>
+        <input  class="form-control" type="text" name="prenume" id="" value="<%= friendFounded.prenume %>" required>
+        <input  class="form-control" type="text" name="age" id="" value="<%= friendFounded.age %>" required>
+    
+        <button class="btn btn-outline-secondary" type="submit">Editeaza</button>
+    </form>
+</div>

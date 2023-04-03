@@ -37,7 +37,7 @@ body{
     text-align: center;
 }
 
-.content .btn{
+.content .btn__add{
     font-size: 1.8rem;
     display: block;
     margin: 4rem auto;
@@ -54,3 +54,46 @@ body{
     margin-bottom: 2rem;
     width: 40rem;
 }
+
+.table__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    width: 60rem;
+    font-size: 1.5rem;
+    border-collapse: collapse;
+    margin-bottom: 5rem;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.btn__action{
+    padding: 5px 10px;
+    border-radius: 1rem;
+    border: 1px solid rgb(53, 53, 53);
+    font-size: 1.5rem;
+}
+
+.action__btn{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+
+
+
+/* STYLES FOR FRIEND PAGE */
+
+

@@ -13,9 +13,39 @@
         <input type="text" name="nume" minlength="3" class="form-control" placeholder="Nume" required>
         <input type="text" name="prenume" minlength="3" class="form-control" placeholder="Prenume" required>
         <input type="number" min="10" max="60" name="age" class="form-control" placeholder="Varsta" required>
-        <button class="btn btn-outline-secondary">Add another friend!</button>
+        <button class="btn btn-outline-secondary btn__add">Add another friend!</button>
     </form>
 </div>
-
-
-<%= JSON.stringify(itemsList) %>
+<div class="table__content">
+    <table>
+        <thead>
+            <tr>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Varsta</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let item of itemsList) { %>
+                <tr>
+                    <td>
+                        <%= item.nume %>
+                    </td>
+                    <td>
+                        <%= item.prenume %>
+                    </td>
+                    <td>
+                        <%= item.age %>
+                    </td>
+                    <td class="action__btn">
+                        <a class="btn btn-outline-secondary btn__action" href="/friend/<%= item.id %>">Editeaza</a>
+                        <form action="/index/<%= item.id %>?_method=DELETE" method="post">
+                            <button class="btn btn-outline-secondary btn__action" type="submit">Jet</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
